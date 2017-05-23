@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/StonePermission.iml" filepath="$PROJECT_DIR$/StonePermission.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stonepermission-sample/StonePermission-sample.iml" filepath="$PROJECT_DIR$/stonepermission-sample/StonePermission-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stonepermissionlib/stonepermissionlib.iml" filepath="$PROJECT_DIR$/stonepermissionlib/stonepermissionlib.iml" />
+    </modules>
+  </component>
+</project>
