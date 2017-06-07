@@ -64,7 +64,8 @@ public class PermissionUtil {
                 method.setAccessible(true);
 
             try {
-                method.invoke(object,null);
+                Object[] obj=new Object[]{};
+                method.invoke(object,obj);
             } catch (Exception e) {
                 e.printStackTrace();
             }
