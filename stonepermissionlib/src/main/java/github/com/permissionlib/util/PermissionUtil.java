@@ -81,18 +81,23 @@ public class PermissionUtil {
      * @return
      */
     private static <T extends Annotation> Method findMethodWithCode(Class clazz, Class<T> annotation, int  requestCode){
-        Method[] methods = clazz.getDeclaredMethods();
-        for (Method method : methods) {
-            if(method.isAnnotationPresent(annotation)){
-                if(annotation.equals(PermissionSuccess.class)){
-                    if(requestCode == method.getAnnotation(PermissionSuccess.class).requestCode())
-                        return method;
 
-                }else if(annotation.equals(PermissionFail.class)){
-                    if(requestCode == method.getAnnotation(PermissionFail.class).requestCode())
-                        return method;
+
+        while (clazz != null) {
+            Method[] methods = clazz.getDeclaredMethods();
+            for (Method method : methods) {
+                if (method.isAnnotationPresent(annotation)) {
+                    if (annotation.equals(PermissionSuccess.class)) {
+                        if (requestCode == method.getAnnotation(PermissionSuccess.class).requestCode())
+                            return method;
+
+                    } else if (annotation.equals(PermissionFail.class)) {
+                        if (requestCode == method.getAnnotation(PermissionFail.class).requestCode())
+                            return method;
+                    }
                 }
             }
+            clazz = clazz.getSuperclass();
         }
         return null;
     }

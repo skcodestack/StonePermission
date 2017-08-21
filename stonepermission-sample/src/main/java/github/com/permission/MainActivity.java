@@ -17,7 +17,7 @@ import github.com.permissionlib.annotation.PermissionFail;
 import github.com.permissionlib.annotation.PermissionSuccess;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private static final int CALL_REQUEST_CODE = 0x00001;
 
@@ -46,13 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 .request();
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        StonePermission.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+    public void baseinvoke(View view){
+        baseTest();
     }
-
 
     @PermissionSuccess(requestCode = CALL_REQUEST_CODE)
     public void success() {
