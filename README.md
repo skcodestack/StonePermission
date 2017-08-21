@@ -6,7 +6,7 @@ Android6.0运行时权限处理框架
 
 	dependencies {
 	   
-	    compile 'github.skcodestack:stonepermissionlib:1.0.3'
+	    compile 'github.skcodestack:stonepermissionlib:1.0.4'
 	    
 	}
 
